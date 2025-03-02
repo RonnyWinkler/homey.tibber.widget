@@ -1,0 +1,41 @@
+{
+  "id": "com.tibber.widget",
+  "version": "0.0.1",
+  "compatibility": ">=12.1.0",
+  "sdk": 3,
+  "name": {
+    "en": "Tibber widgets",
+    "de": "Tibber-Widgets"
+  },
+  "description": {
+    "en": "Widgets for Tibber",
+    "de": "Widgets für Tibber"
+  },
+  "category": [
+    "energy"
+  ],
+  "author": {
+    "name": "Ronny Winkler",
+    "email": "ronny.winkler@web.de"
+  },
+  "brandColor":"#23B8CC",
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png"
+  },
+  "source": "https://github.com/RonnyWinkler/homey.tibber.widget",
+  "bugs": {
+    "url": "https://github.com/RonnyWinkler/homey.tibber.widget/issues"
+  },
+  "homeyCommunityTopicId": 0,
+  "permissions": [
+    "homey:app:com.tibber"
+  ],
+  "contributing": {
+      "donate": {
+          "paypal": {
+              "username": "winklerronny"
+          }
+      }
+  }
+}
