@@ -37,19 +37,13 @@ class tibberWidgetApp extends Homey.App {
   // WIDGET Settings ==============================================================================
   async _initWidgets(){
     this.homey.dashboards.getWidget('price').registerSettingAutocompleteListener('device_home', async (query, settings) => { 
-      let result = await this.tibberAppApi.get('/home_devices?search='+query, {});
+      let result = await this.tibberAppApi.get('/home_devices?name='+query, {});
       return result
     });
     this.homey.dashboards.getWidget('price').registerSettingAutocompleteListener('device_pulse', async (query, settings) => { 
-      let result =  await this.tibberAppApi.get('/pulse_devices?search='+query, {});
+      let result =  await this.tibberAppApi.get('/pulse_devices?name='+query, {});
       return result;
     });
-  }
-  
-  // Widget API ============================================================================
-  async apiTriggerRealtimeData(){
-    // let device = this.homey.drivers.getDriver('home').getDevices()[0] as HomeDevice;
-    this.tibberAppApi.get('/trigger_realtime_data', {});
   }
   
 }

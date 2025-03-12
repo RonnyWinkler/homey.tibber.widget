@@ -99,7 +99,7 @@
             console.log('instanceId: ', Homey.getWidgetInstanceId());
             console.log('settings', Homey.getSettings());
 
-            // Realtime event for changed car data
+            // Realtime event for changed device data
             Homey.on('device_update', (data)=> _deviceUpdate(data));
 
             // Show frames if devices are connected
@@ -111,9 +111,9 @@
             // }
 
             // Trigger realtime event
-            console.log('Trigger device data...');
-            let data = await Homey.api('GET', '/trigger_realtime_data', {});
-
+            console.log('Get Home device data...');
+            // let data = await Homey.api('GET', '/trigger_realtime_data', {});
+            _deviceUpdate( await Homey.api('GET', '/home_device_data?device_id='+settings.device_home.id, {}) );
         }
 
         async function _deviceUpdate(data){

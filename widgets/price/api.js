@@ -2,8 +2,7 @@
 
 module.exports = {
 
-    async triggerRealtimeData({ homey, query }) {
-        return await homey.app.apiTriggerRealtimeData( );
-    }
-
+  async getHomeDeviceData({ homey, query }) {
+    return await homey.app.tibberAppApi.get('/home_device_data?device_id='+query.device_id, {});
+  }
 };

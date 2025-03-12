@@ -121,9 +121,9 @@
       ],
       "height": 70,
       "api": {
-        "triggerRealtimeData": {
+        "getHomeDeviceData": {
           "method": "GET",
-          "path": "/trigger_realtime_data"
+          "path": "/home_device_data"
         }
       },
       "id": "price"
