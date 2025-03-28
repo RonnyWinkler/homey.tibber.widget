@@ -1,7 +1,7 @@
 {
   "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
   "id": "com.tibber.widget",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "compatibility": ">=12.1.0",
   "sdk": 3,
   "name": {
@@ -123,7 +123,7 @@
       "api": {
         "getHomeDeviceData": {
           "method": "GET",
-          "path": "/home_device_data"
+          "path": "/home-device-data"
         }
       },
       "id": "price"

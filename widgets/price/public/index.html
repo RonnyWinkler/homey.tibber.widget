@@ -100,7 +100,7 @@
             console.log('settings', Homey.getSettings());
 
             // Realtime event for changed device data
-            Homey.on('device_update', (data)=> _deviceUpdate(data));
+            Homey.on('data-update-event', (data)=> _deviceUpdate(data));
 
             // Show frames if devices are connected
             // if (Homey.getSettings().device_home && Homey.getSettings().device_home.id){
@@ -113,20 +113,20 @@
             // Trigger realtime event
             console.log('Get Home device data...');
             // let data = await Homey.api('GET', '/trigger_realtime_data', {});
-            _deviceUpdate( await Homey.api('GET', '/home_device_data?device_id='+settings.device_home.id, {}) );
+            _deviceUpdate( await Homey.api('GET', '/home-device-data?deviceId='+settings.device_home.id, {}) );
         }
 
         async function _deviceUpdate(data){
-            switch (data.driver_id) {
+            switch (data.driverId) {
                 case 'home':
-                    if (settings.device_home && settings.device_home.id && settings.device_home.id == data.device_id){
+                    if (settings.device_home && settings.device_home.id && settings.device_home.id == data.deviceId){
                         console.log('Update Home device data: ', data);
                         await _deviceUpdateHome(data);
                         document.getElementById('home').style.display = "flex";
                     }
                     break;
                 case 'pulse':
-                    if (settings.device_pulse && settings.device_pulse.id && settings.device_pulse.id == data.device_id){
+                    if (settings.device_pulse && settings.device_pulse.id && settings.device_pulse.id == data.deviceId){
                         // console.log('Update Pulse device data: ', data);
                         await _deviceUpdatePulse(data);
                         document.getElementById('pulse').style.display = "flex";
