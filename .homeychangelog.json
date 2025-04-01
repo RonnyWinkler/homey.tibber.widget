@@ -1,11 +1,5 @@
 {
-  "0.0.1": {
-    "en": "Initial release"
-  },
-  "0.0.2": {
-    "en": "Adaptions to TIbber app changes"
-  },
-  "0.0.3": {
-    "en": "Adaptions to TIbber app changes"
+  "1.0.0": {
+    "en": "Initial release. Use this app to show widgets for Tibber. Only works with Tibber app version > 1.10.0"
   }
 }

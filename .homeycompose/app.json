@@ -1,15 +1,18 @@
 {
-  "id": "com.tibber.widget",
-  "version": "0.0.3",
+  "id": "de.rwdevelopment.tibberwidget",
+  "version": "1.0.0",
   "compatibility": ">=12.1.0",
   "sdk": 3,
   "name": {
-    "en": "Tibber widgets",
-    "de": "Tibber-Widgets"
+    "en": "Tibber Widget for Homey Dashboard",
+    "de": "Tibber Widget für Homey Dashboard"
   },
   "description": {
     "en": "Widgets for Tibber",
     "de": "Widgets für Tibber"
+  },
+  "tags": {
+    "en": ["Tibber", "energy", "price", "widget", "chart", "dashboard"]
   },
   "category": [
     "energy"
