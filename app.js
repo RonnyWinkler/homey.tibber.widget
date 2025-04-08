@@ -23,10 +23,12 @@ class tibberWidgetApp extends Homey.App {
     this.tibberAppApi.on('realtime', async (event, data) => {
       // this.log('Tibber realtime event; ', event, ' Data: ', data);
       // send own realtime data to widgets
-      data['tz'] = this.homey.clock.getTimezone();
-      data['language'] = this.homey.i18n.getLanguage();
+      if (event == 'data-update-event' && typeof data === 'object' && ( data.driverId === 'pulse' || data.driverId === 'home')) {
+        data['tz'] = this.homey.clock.getTimezone();
+        data['language'] = this.homey.i18n.getLanguage();
 
-      await this.homey.api.realtime(event, data);
+        await this.homey.api.realtime(event, data);
+      }
     });
 
     // Init Widgets

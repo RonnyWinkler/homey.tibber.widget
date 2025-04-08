@@ -1,5 +1,8 @@
 {
   "1.0.0": {
     "en": "Initial release. Use this app to show widgets for Tibber. Only works with Tibber app version > 1.10.0"
+  },
+  "1.0.1": {
+    "en": "Filter invalid realtime events."
   }
 }
