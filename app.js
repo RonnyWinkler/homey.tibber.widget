@@ -19,6 +19,7 @@ class tibberWidgetApp extends Homey.App {
     }
 
     // Init App API
+    this.log('Connecting to Tibber app API...');
     this.tibberAppApi = this.homey.api.getApiApp('com.tibber');
     this.tibberAppApi.on('realtime', async (event, data) => {
       // this.log('Tibber realtime event; ', event, ' Data: ', data);
@@ -32,6 +33,7 @@ class tibberWidgetApp extends Homey.App {
     });
 
     // Init Widgets
+    this.log('Init widgets...');
     await this._initWidgets();
 
   }
@@ -39,12 +41,18 @@ class tibberWidgetApp extends Homey.App {
   // WIDGET Settings ==============================================================================
   async _initWidgets(){
     this.homey.dashboards.getWidget('price').registerSettingAutocompleteListener('device_home', async (query, settings) => { 
-      let result = await this.tibberAppApi.get('/home-devices?name='+query, {});
-      return result
+      try{
+        return await this.tibberAppApi.get('/home-devices?name='+query, {});
+      } catch (error) {
+        throw new Error('Missing Tibber app version 1.10.0 or higher');
+      }
     });
     this.homey.dashboards.getWidget('price').registerSettingAutocompleteListener('device_pulse', async (query, settings) => { 
-      let result =  await this.tibberAppApi.get('/pulse-devices?name='+query, {});
-      return result;
+      try{
+        return await this.tibberAppApi.get('/pulse-devices?name='+query, {});
+      } catch (error) {
+        throw new Error('Missing Tibber app version 1.10.0 or higher');
+      }
     });
   }
   

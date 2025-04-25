@@ -4,5 +4,8 @@
   },
   "1.0.1": {
     "en": "Filter invalid realtime events."
+  },
+  "1.0.2": {
+    "en": "Add error hint for missing Tibber app version."
   }
 }
