@@ -364,7 +364,7 @@
                     }
                     switch (echarts_data[i][2]){
                         case 'VERY_CHEAP':
-                            piece.color = 'rgba(var(--color_grb_very_cheap), var(--chart_opacity))';
+                            piece.color = 'rgba(var(--color_rgb_very_cheap), var(--chart_opacity))';
                             break;
                         case 'CHEAP':
                             piece.color = 'rgba(var(--color_rgb_cheap), var(--chart_opacity))';
@@ -381,7 +381,7 @@
                     }
                     visualMapPieces.push( piece );
                 }
-                // console.log('VisualMap pieces: ',visualMapPieces);
+                console.log('VisualMap pieces: ',visualMapPieces);
                 visualMapX = {
                     show: false,
                     type: 'piecewise',

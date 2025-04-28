@@ -1,6 +1,6 @@
 {
   "id": "de.rwdevelopment.tibberwidget",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "compatibility": ">=12.1.0",
   "sdk": 3,
   "name": {
