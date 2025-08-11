@@ -10,5 +10,8 @@
   },
   "1.0.3": {
     "en": "Fixed 'very cheap' chart line color."
+  },
+  "1.0.4": {
+    "en": "Updated app description."
   }
 }
